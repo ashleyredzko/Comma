@@ -13,7 +13,7 @@ data = {
 }
 
 url = 'https://api.projectoxford.ai/emotion/v1.0/recognize'
-files = {'files': open('example.jpg', 'rb').read() }
+files = open('example.jpg', 'rb').read()
 
 r = requests.post(url, data=files, headers=headers)
 
