@@ -27,26 +27,24 @@
   </header>
 
 <!-- DropDown Menu -->
-<div align = "center">
-<form>
-    <div class="well carousel-search hidden-sm">
-        <div class="btn-group"> <a class="btn btn-default dropdown-toggle btn-select" data-toggle="dropdown" href="#">Select a Genre<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><a href="#">Anger</a></li>
-                <li><a href="#">Contempt</a></li>
-				<li><a href="#">Disgust</a></li>
-				<li><a href="#">Fear</a></li>
-				<li><a href="#">Happiness</a></li>
-				<li><a href="#">Neutral</a></li>
-				<li><a href="#">Sadness</a></li>
-				<li><a href="#">Surprise</a></li>
-            </ul>
+<div class="text-center">
+    <form class="form-inline">
+        <div class="form-group">
+            <label for="emotion">Select a Genre</label>
+            <select name="emotion" id="emotion" class="form-control">
+                <option value=""></option>
+                <option value="anger">Anger</option>
+                <option value="contempt">Contempt</option>
+                <option value="disgust">Disgust</option>
+                <option value="fear">Fear</option>
+                <option value="happiness">Happiness</option>
+                <option value="neutral">Neutral</option>
+                <option value="sadness">Sadness</option>
+                <option value="surprise">Surprise</option>
+            </select>
         </div>
-        <div class="btn-group">
-            <button type="button" id="btnSearch" class="btn btn-primary">Search Movies</button>
-        </div>
-    </div>
-</form>
+        <button type="submit" id="btnSearch" class="btn btn-primary">Search Movies</button>
+    </form>
 </div>
 
 <!-- Table-->
