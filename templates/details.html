@@ -16,6 +16,53 @@
             </div>
         </div>
     </div>
+<div class="panel panel-default">
+  <div class="panel-heading">Average Emotional Ratings</div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Emotion</th>
+                    <th>Average</th>
+                <tr>
+            </thead>
+                <tr>
+                    <td>Anger</td>
+                    <td>{{ "%d" % (movie[1] * 100) }}%</td>
+                </tr>
+                <tr>
+                    <td>Anger</td>
+                    <td>{{ "%d" % (movie[2] * 100) }}%</td>
+                </tr>
+                <tr>
+                    <td>Disgust</td>
+                    <td>{{ "%d" % (movie[3] * 100) }}%</td>
+                </tr>
+                <tr>
+                    <td>Fear</td>
+                    <td>{{ "%d" % (movie[4] * 100) }}%</td>
+                </tr>
+                <tr>
+                    <td>Happiness</td>
+                    <td>{{ "%d" % (movie[5] * 100) }}%</td>
+                </tr>
+                <tr>
+                    <td>Neutral</td>
+                    <td>{{ "%d" % (movie[6] * 100) }}%</td>
+                </tr>
+                <tr>
+                    <td>Sadness</td>
+                    <td>{{ "%d" % (movie[7] * 100) }}%</td>
+                </tr>
+                <tr>
+                    <td>Surprise</td>
+                    <td>{{ "%d" % (movie[8] * 100) }}%</td>
+                </tr>
+                
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
 </div>
 
 {% include "footer.html" %}

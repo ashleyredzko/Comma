@@ -66,6 +66,8 @@ def details(movie):
 
     cursor.close()
     connection.close()
+    
+    print(movie)
 
     return render_template('details.html', movie=movie)
 
