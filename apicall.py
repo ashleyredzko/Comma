@@ -17,4 +17,17 @@ files = open('frames/frames_320.jpg', 'rb').read()
 
 r = requests.post(url, data=files, headers=headers)
 
-print(r.text)
+response = json.JSONDecoder().decode(r.text)
+totals = {}
+faces = 0
+for key in response:
+    faces += 1
+    for emotion in key['scores']:
+        if faces == 1:
+            totals[emotion] = key['scores'][emotion]
+        else:
+            totals[emotion] += key['scores'][emotion]
+            
+print(totals)
+for emotion in totals:
+    print(emotion + ' average: ' + str(totals[emotion] / faces))
