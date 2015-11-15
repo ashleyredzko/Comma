@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+  <link href="css/demo_style.css" rel="stylesheet"/>
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script language="javascript" type="text/javascript" src="jQuerytest2.js"></script>
+</head>
+
+<body>
+
+<!-- Top Nav Bar-->
+  <header>
+    <div class="nav">
+	<h1>Movie Trailer Biometrics</h1>
+      <ul>
+        <li class="Home"><a href="Home.html">Home</a></li>
+        <li class="Demo"><a class="active" href="Demo.html">Demo</a></li>
+        <li class="About"><a href="About.html">How It Works</a></li>
+        <li class="Team"><a href="Team.html">Meet the Team</a></li>
+      </ul>
+    </div>
+  </header>
+
+<!-- DropDown Menu -->
+<div align = "center">
+<form>
+    <div class="well carousel-search hidden-sm">
+        <div class="btn-group"> <a class="btn btn-default dropdown-toggle btn-select" data-toggle="dropdown" href="#">Select a Genre<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Anger</a></li>
+                <li><a href="#">Contempt</a></li>
+				<li><a href="#">Disgust</a></li>
+				<li><a href="#">Fear</a></li>
+				<li><a href="#">Happiness</a></li>
+				<li><a href="#">Neutral</a></li>
+				<li><a href="#">Sadness</a></li>
+				<li><a href="#">Surprise</a></li>
+            </ul>
+        </div>
+        <div class="btn-group">
+            <button type="button" id="btnSearch" class="btn btn-primary">Search Movies</button>
+        </div>
+    </div>
+</form>
+</div>
+
+<!-- Table-->
+
+<div class="container">
+  <div class="row">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4>
+            Movie List
+          </h4>
+        </div>
+        <table class="table table-fixed">
+          <thead>
+            <tr>
+              <th class="col-xs-2">#</th><th class="col-xs-8">Movie Name</th><th class="col-xs-2">Average Emotion Rating</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-xs-2">1</td><td class="col-xs-8">Chicken Little</td><td class="col-xs-2">80%</td>
+            </tr>
+            <tr>
+              <td class="col-xs-2">2</td><td class="col-xs-8">Mrs. Doubtfire</td><td class="col-xs-2">73%</td>
+            </tr>
+            <tr>
+              <td class="col-xs-2">3</td><td class="col-xs-8">Cinderella</td><td class="col-xs-2">51%</td>
+            </tr>
+            <tr>
+              <td class="col-xs-2">4</td><td class="col-xs-8">Pretty Woman</td><td class="col-xs-2">43%</td>
+            </tr>
+            <tr>
+              <td class="col-xs-2">5</td><td class="col-xs-8">Die Hard</td><td class="col-xs-2">26%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  </div>
+</div>
+
+  
+  <div class="push"></div>
+ </div>
+ 
+ <!--Footer-->
+ <div class="footer">
+ </div>
+</body>
+
+</html>
