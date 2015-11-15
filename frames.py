@@ -8,8 +8,14 @@ if not video.isOpened():
 
 frame_number = 0
 
-while video.isOpened():
-    rval, frame = video.read()
+more_frames = True
+
+while video.isOpened() and more_frames:
+    more_frames, frame = video.read()
+
+    if not frame.any():
+        more_frames = False
+        continue
 
     cv2.imwrite('frames/frame_%d.jpg' % frame_number, frame)
 
