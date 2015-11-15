@@ -1,31 +1,4 @@
-<!DOCTYPE html>
-<html lang = "en">
-
-<head>
-  <link href="css/demo_style.css" rel="stylesheet"/>
-<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-  <meta charset="utf-8"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script language="javascript" type="text/javascript" src="jQuerytest2.js"></script>
-</head>
-
-<body>
-
-<!-- Top Nav Bar-->
-  <header>
-    <div class="nav">
-	<h1>Movie Trailer Biometrics</h1>
-      <ul>
-        <li class="Home"><a href="Home.html">Home</a></li>
-        <li class="Demo"><a class="active" href="Demo.html">Demo</a></li>
-        <li class="About"><a href="About.html">How It Works</a></li>
-        <li class="Team"><a href="Team.html">Meet the Team</a></li>
-      </ul>
-    </div>
-  </header>
-
+{% include "header.html" %}
 <!-- DropDown Menu -->
 <div class="text-center">
     <form class="form-inline">
@@ -84,14 +57,4 @@
       </div>
   </div>
 </div>
-
-  
-  <div class="push"></div>
- </div>
- 
- <!--Footer-->
- <div class="footer">
- </div>
-</body>
-
-</html>
+{% include "footer.html" %}

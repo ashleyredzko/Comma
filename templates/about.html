@@ -1,32 +1,5 @@
-<!DOCTYPE html>
-<html lang = "en">
+{% include "header.html" %}
 
-<head>
-  <link href="css/about_style.css" rel="stylesheet"/>
-<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-  <meta charset="utf-8"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-  <script language="javascript" type="text/javascript" src="jQuerytest2.js"></script>
-</head>
-
-<body>
-
-<!-- Top Nav Bar-->
-  <header>
-    <div class="nav">
-	<h1>Movie Trailer Biometrics</h1>
-      <ul>
-        <li class="Home"><a href="Home.html">Home</a></li>
-        <li class="Demo"><a href="Demo.html">Demo</a></li>
-        <li class="About"><a class="active" href="About.html">How It Works</a></li>
-        <li class="Team"><a href="Team.html">Meet the Team</a></li>
-      </ul>
-    </div>
-  </header>
-  
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
@@ -99,12 +72,4 @@
     </div>
   </div>
 </div>
-
- <div class="push"></div>
- <div class="footer">
-
- </div>
-</body>
-
-
-</html>
+{% include "footer.html" %}
