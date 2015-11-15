@@ -1,10 +1,9 @@
 {% include "header.html" %}
 
 <!-- DropDown Menu -->
-<div class="text-center">
+<div class="text-center emotion-search"">
     <form class="form-inline" action="" method="GET">
         <div class="form-group">
-            <label for="emotion">Select a Genre</label>
             <select name="emotion" id="emotion" class="form-control">
                 <option value="anger">Anger</option>
                 <option value="contempt">Contempt</option>
@@ -27,13 +26,13 @@
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4>
-            Movie List
+            Movie Suggestions for {{emotion}}
           </h4>
         </div>
-        <table class="table table-fixed">
+        <table class="table table-fixed table-striped">
           <thead>
             <tr>
-              <th class="col-xs-2">#</th><th class="col-xs-8">Movie Name</th><th class="col-xs-2">Average Emotion Rating</th>
+              <th class="col-xs-8">Movie Name</th><th class="col-xs-2">Emotion Avg</th>
             </tr>
           </thead>
           <tbody

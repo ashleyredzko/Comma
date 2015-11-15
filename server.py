@@ -39,6 +39,10 @@ def demo():
     connection.close()
 
     return render_template('Demo.html', movies=movies)
+    
+@app.route('/details')
+def details():
+    return render_template('details.html')
 
 @app.route('/about')
 def about():
