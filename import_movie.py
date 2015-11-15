@@ -11,11 +11,11 @@ row_data = {'name': moviename[0]}
 
 for line in file:
 	tokenized_list = line.split(' ')
-	row_data[tokenized_list[0]  + '_amt'] = tokenized_list[2]
+	row_data[tokenized_list[0]  + '_amt'] = tokenized_list[2].rstrip('\n')
 	
 columns = ', '.join(row_data.keys())
 placeholders = ', '.join('?' * len(row_data))
-sql = 'INSERT INTO  movies ({}) VALUES ({})'.format(columns, placeholders)
+sql = 'INSERT INTO movies ({}) VALUES ({})'.format(columns, placeholders)
 print(sql, list(row_data.values()))
 cursor.execute(sql, list(row_data.values()))
 
