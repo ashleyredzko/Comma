@@ -17,9 +17,8 @@ y = 0
 
 while video.isOpened() and more_frames:
     more_frames, frame = video.read()
-
     if frame_number % 2 == 0:
-        if frame is None or not frame.any():
+        if frame is None:
             more_frames = False
             continue
 

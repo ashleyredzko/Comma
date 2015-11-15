@@ -19,11 +19,18 @@ file_list = os.listdir('frames/')
 
 for filename in file_list:
     files = open('frames/' + filename, 'rb').read()
+    print('Processing ' + filename + '...')
     r = requests.post(url, data=files, headers=headers)
 
     response = r.json()
+
+    time.sleep(1)
     
-    time.sleep(5)
+    responses = open('responses.txt', 'a')
+    
+    responses.write(r.text)
+    
+    responses.close()
 
     for key in response:
         faces += 1
@@ -32,6 +39,12 @@ for filename in file_list:
                 totals[emotion] = key['scores'][emotion]
             else:
                 totals[emotion] += key['scores'][emotion]
-            
+         
+responses = open('responses.txt', 'a')
+
 for emotion in totals:
-    print(emotion + ' average: ' + str(totals[emotion] / faces))
+    average = emotion + ' average: ' + str(totals[emotion] / faces)
+    print(average)
+    responses.write(average)
+    
+responses.close()
