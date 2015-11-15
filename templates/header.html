@@ -17,16 +17,19 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Movie Biometrics</a>
+      <a class="navbar-brand" href="/">Comma</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="header-collapse">
-      <ul class="nav navbar-nav">
-        <li><a href="/">Home</a></li>
-        <li><a href="/demo">Demo</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/team">Team</a></li>
+      <ul class="nav navbar-nav navbar-left">
+        <li {% if request.path == "/" %} class="active" {% endif %}><a href="/">Home</a></li>
+        <li {% if request.path == "/demo" %} class="active" {% endif %}><a href="/demo">Demo</a></li>
+        <li {% if request.path == "/about" %} class="active" {% endif %}><a href="/about">About</a></li>
+        <li {% if request.path == "/team" %} class="active" {% endif %}><a href="/team">Team</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://github.com/tredzko/Comma">GitHub Repository</a></li>
       </ul>
     </div>
   </div>

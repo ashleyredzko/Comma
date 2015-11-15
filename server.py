@@ -48,7 +48,7 @@ def demo():
     cursor.close()
     connection.close()
 
-    return render_template('Demo.html', movies=movies)
+    return render_template('Demo.html', movies=movies, emotion=emotion)
 
 @app.route('/details/<movie>')
 def details(movie):

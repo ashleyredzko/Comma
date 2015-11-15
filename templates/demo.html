@@ -26,13 +26,13 @@
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4>
-            Movie Suggestions for {{emotion}}
+            Movie Suggestions for {{emotion|title}}
           </h4>
         </div>
         <table class="table table-fixed table-striped">
           <thead>
             <tr>
-              <th class="col-xs-8">Movie Name</th><th class="col-xs-2">Emotion Avg</th>
+              <th class="col-xs-4">Ranking for {{emotion|title}}</th><th class="col-xs-10">Movie Name</th>
             </tr>
           </thead>
           <tbody
@@ -42,10 +42,7 @@
                 {{ loop.index }}
               </td>
               <td>
-                {{ movie[2] }}
-              </td>
-              <td>
-                {{ "%d" % (movie[1] * 100) }}%
+                <a href="/details/{{movie[0]}}">{{ movie[2] }}</a>
               </td>
             </tr>
             {% endfor %}
