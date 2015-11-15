@@ -48,7 +48,7 @@ def demo():
     cursor.close()
     connection.close()
 
-    return render_template('Demo.html', movies=movies, emotion=emotion)
+    return render_template('demo.html', movies=movies, emotion=emotion)
 
 @app.route('/details/<movie>')
 def details(movie):
@@ -66,18 +66,18 @@ def details(movie):
 
     cursor.close()
     connection.close()
-    
+
     print(movie)
 
     return render_template('details.html', movie=movie)
 
 @app.route('/about')
 def about():
-    return render_template('About.html')
+    return render_template('about.html')
 
 @app.route('/team')
 def team():
-    return render_template('Team.html')
+    return render_template('team.html')
 
 if __name__ == "__main__":
     app.config["DEBUG"] = True
