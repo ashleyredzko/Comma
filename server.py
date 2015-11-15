@@ -13,6 +13,16 @@ movie_names = {
     "shutterisland": "Shutter Island",
 }
 
+movie_videos = {
+    "casinoroyale": "36mnx8dBbGE",
+    "faultinourstars": "9ItBvH5J6ss",
+    "greatgatsby": "rARN6agiW7o",
+    "ingloriousbasterds": "6AtLlVNsuAc",
+    "romeoandjuliet": "sMel13nY0PE",
+    "schindlerslist": "dwfIf1WMhgc",
+    "shutterisland": "5iaYLCiq5RM",
+}
+
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -39,10 +49,25 @@ def demo():
     connection.close()
 
     return render_template('Demo.html', movies=movies)
-    
-@app.route('/details')
-def details():
-    return render_template('details.html')
+
+@app.route('/details/<movie>')
+def details(movie):
+    connection = sqlite3.connect('comma_database.db')
+    cursor = connection.cursor()
+
+    emotion = request.args.get('emotion', 'neutral')
+
+    cursor.execute('SELECT name, anger_amt, contempt_amt, disgust_amt, fear_amt, happiness_amt, neutral_amt, sadness_amt, surprise_amt FROM movies WHERE name=?', (movie, ))
+
+    movie = list(cursor.fetchone())
+
+    movie.append(movie_names[movie[0]])
+    movie.append(movie_videos[movie[0]])
+
+    cursor.close()
+    connection.close()
+
+    return render_template('details.html', movie=movie)
 
 @app.route('/about')
 def about():
