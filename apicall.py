@@ -24,7 +24,7 @@ for filename in file_list:
 
     response = r.json()
 
-    time.sleep(1)
+    time.sleep(2)
     
     responses = open('responses.txt', 'a')
     
