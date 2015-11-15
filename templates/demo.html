@@ -1,4 +1,5 @@
 {% include "header.html" %}
+
 <!-- DropDown Menu -->
 <div class="text-center">
     <form class="form-inline">
@@ -36,22 +37,20 @@
               <th class="col-xs-2">#</th><th class="col-xs-8">Movie Name</th><th class="col-xs-2">Average Emotion Rating</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody
+            {% for movie in movies %}
             <tr>
-              <td class="col-xs-2">1</td><td class="col-xs-8">Chicken Little</td><td class="col-xs-2">80%</td>
+              <td>
+                {{ loop.index }}
+              </td>
+              <td>
+                {{ movie[2] }}
+              </td>
+              <td>
+                {{ "%d" % (movie[1] * 100) }}%
+              </td>
             </tr>
-            <tr>
-              <td class="col-xs-2">2</td><td class="col-xs-8">Mrs. Doubtfire</td><td class="col-xs-2">73%</td>
-            </tr>
-            <tr>
-              <td class="col-xs-2">3</td><td class="col-xs-8">Cinderella</td><td class="col-xs-2">51%</td>
-            </tr>
-            <tr>
-              <td class="col-xs-2">4</td><td class="col-xs-8">Pretty Woman</td><td class="col-xs-2">43%</td>
-            </tr>
-            <tr>
-              <td class="col-xs-2">5</td><td class="col-xs-8">Die Hard</td><td class="col-xs-2">26%</td>
-            </tr>
+            {% endfor %}
           </tbody>
         </table>
       </div>

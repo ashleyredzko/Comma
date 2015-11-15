@@ -1,7 +1,17 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import sqlite3
 
 app = Flask(__name__, static_folder="static", static_url_path="")
+
+movie_names = {
+    "casinoroyale": "Casino Royale",
+    "faultinourstars": "The Fault in Our Stars",
+    "greatgatsby": "Great Gatsby",
+    "ingloriousbasterds": "Inglorious Basterds",
+    "romeoandjuliet": "Romeo and Juliet",
+    "schindlerslist": "Schindler's List",
+    "shutterisland": "Shutter Island",
+}
 
 @app.route('/')
 def home():
@@ -12,16 +22,23 @@ def demo():
     connection = sqlite3.connect('comma_database.db')
     cursor = connection.cursor()
 
-    cursor.execute('SELECT name, happiness_amt, surprise_amt, contempt_amt, disgust_amt, fear_amt, neutral_amt, anger_amt, sadness_amt FROM movies')
+    emotion = request.args.get('emotion', 'neutral')
 
-    movies = cursor.fetchall()
+    cursor.execute('SELECT name, %s_amt FROM movies ORDER BY %s_amt DESC' % (emotion, emotion, ))
 
-    print(movies)
+    movie_data = cursor.fetchall()
+    movies = []
+
+    for movie in movie_data:
+        movie = list(movie)
+        movie.append(movie_names[movie[0]])
+
+        movies.append(movie)
 
     cursor.close()
     connection.close()
 
-    return render_template('Demo.html')
+    return render_template('Demo.html', movies=movies)
 
 @app.route('/about')
 def about():
