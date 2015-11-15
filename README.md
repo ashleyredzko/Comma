@@ -8,5 +8,5 @@ CREATE TABLE actors (id integer PRRIMARY KEY, last_name varchar(255), first_name
 
 CREATE TABLE movie_actors (id integer PRIMARY KEY, movie_id integer, actor_id integer );
 
-CREATE TABLE movies (id integers PRIMARY KEY, name varchar(255), year integer, happy_amt DECIMAL, sad_amt DECIMAL, disgust_amt DECIMAL, contempt_amt DECIMAL, neutral_amt DECIMAL, anger_amt DECIMAL, fear_amt DECIMAL);
+CREATE TABLE movies (id integers PRIMARY KEY, name varchar(255), year integer, happy_amt DECIMAL, surprise_amt DECIMAL,sad_amt DECIMAL, disgust_amt DECIMAL, contempt_amt DECIMAL, neutral_amt DECIMAL, anger_amt DECIMAL, fear_amt DECIMAL);
 ```
