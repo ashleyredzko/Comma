@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+import sqlite3
 
 app = Flask(__name__, static_folder="static", static_url_path="")
 
@@ -8,6 +9,18 @@ def home():
 
 @app.route('/demo')
 def demo():
+    connection = sqlite3.connect('comma_database.db')
+    cursor = connection.cursor()
+
+    cursor.execute('SELECT name, happiness_amt, surprise_amt, contempt_amt, disgust_amt, fear_amt, neutral_amt, anger_amt, sadness_amt FROM movies')
+
+    movies = cursor.fetchall()
+
+    print(movies)
+
+    cursor.close()
+    connection.close()
+
     return render_template('Demo.html')
 
 @app.route('/about')
