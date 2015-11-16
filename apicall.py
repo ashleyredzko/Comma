@@ -8,7 +8,7 @@ faces = 0
 
 headers = {
     'Content-Type': 'application/octet-stream',
-    'Ocp-Apim-Subscription-Key': 'e161d0e1d12c434d8b00949bebc9da60'
+    'Ocp-Apim-Subscription-Key': '<insert Project Oxford Emotion API key here>'
 }
 
 url = 'https://api.projectoxford.ai/emotion/v1.0/recognize'
